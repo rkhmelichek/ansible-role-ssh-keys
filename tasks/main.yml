@@ -1,4 +1,5 @@
 ---
+
 - name: configure ~/.ssh/id_rsa
   template:
     src: id_rsa.j2
