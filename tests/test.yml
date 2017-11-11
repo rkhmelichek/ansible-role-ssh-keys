@@ -2,4 +2,6 @@
 
 - hosts: localhost
   roles:
-    - ansible-role-ssh-keys
+    - role: ansible-role-ssh-keys
+      keys:
+        - { name: id_rsa, private: "private", public: "public" }

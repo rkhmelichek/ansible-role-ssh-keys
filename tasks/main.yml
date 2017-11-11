@@ -1,11 +1,5 @@
 ---
 
-- name: configure ~/.ssh/id_rsa
-  template:
-    src: id_rsa.j2
-    dest: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
-
-- name: configure ~/.ssh/id_rsa.pub
-  template:
-    src: id_rsa.pub.j2
-    dest: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub"
+- name: Configure SSH keys
+  include_tasks: install.yml key={{ item }}
+  with_items: "{{ keys }}"

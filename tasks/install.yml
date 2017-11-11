@@ -1,0 +1,13 @@
+- name: Configure SSH private key - {{ key.name }}
+  template:
+    src: id_rsa.j2
+    dest: "{{ lookup('env', 'HOME') }}/.ssh/{{ key.name }}"
+  vars:
+    ssh_rsa_private_key: "{{ key.private }}"
+
+- name: Configure SSH public key - {{ key.name }}
+  template:
+    src: id_rsa.pub.j2
+    dest: "{{ lookup('env', 'HOME') }}/.ssh/{{ key.name }}.pub"
+  vars:
+    ssh_rsa_public_key: "{{ key.public }}"
