@@ -13,3 +13,4 @@
     mode: 0644
   vars:
     ssh_rsa_public_key: "{{ key.public }}"
+    ssh_rsa_public_key_comment: "{{ key.comment | default('') }}"
