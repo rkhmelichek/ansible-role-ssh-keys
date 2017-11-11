@@ -2,6 +2,7 @@
   template:
     src: id_rsa.j2
     dest: "{{ lookup('env', 'HOME') }}/.ssh/{{ key.name }}"
+    mode: 0600
   vars:
     ssh_rsa_private_key: "{{ key.private }}"
 
@@ -9,5 +10,6 @@
   template:
     src: id_rsa.pub.j2
     dest: "{{ lookup('env', 'HOME') }}/.ssh/{{ key.name }}.pub"
+    mode: 0644
   vars:
     ssh_rsa_public_key: "{{ key.public }}"
