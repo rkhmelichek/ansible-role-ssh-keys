@@ -1,6 +1,6 @@
 galaxy_info:
   author: Roman Khmelichek
-  description: Configures a public/private SSH key-pair for the current user
+  description: Configures public/private SSH key-pairs for the current user
   license: BSD
   min_ansible_version: 2.2
   platforms:

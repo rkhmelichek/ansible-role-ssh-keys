@@ -2,4 +2,4 @@
 
 - name: Configure SSH keys
   include_tasks: install.yml key={{ item }}
-  with_items: "{{ keys }}"
+  with_items: "{{ ssh_keys }}"
