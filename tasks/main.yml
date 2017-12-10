@@ -1,5 +1,11 @@
 ---
 
+- name: Ensure SSH config directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.ssh"
+    state: directory
+    mode: 0700
+
 - name: Configure SSH keys
   include_tasks: install.yml key={{ item }}
   with_items: "{{ ssh_keys }}"
