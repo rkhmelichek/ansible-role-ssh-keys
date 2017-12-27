@@ -7,5 +7,7 @@
     mode: 0700
 
 - name: Configure SSH keys
-  include_tasks: install.yml key={{ item }}
+  include_tasks: install.yml
+  loop_control:
+    loop_var: key
   with_items: "{{ ssh_keys }}"
