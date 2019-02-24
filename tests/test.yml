@@ -4,4 +4,4 @@
   roles:
     - role: ansible-role-ssh-keys
       keys:
-        - { name: id_rsa, private: "private", public: "public" }
+        - { name: id_rsa, private: "private", public: "ssh-rsa public" }

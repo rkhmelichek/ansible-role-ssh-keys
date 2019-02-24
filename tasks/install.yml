@@ -2,17 +2,16 @@
 
 - name: Configure SSH private key - {{ key.name }}
   template:
-    src: id_rsa.j2
+    src: id.j2
     dest: "{{ ansible_env.HOME }}/.ssh/{{ key.name }}"
     mode: 0600
   vars:
-    ssh_rsa_private_key: "{{ key.private }}"
+    ssh_private_key: "{{ key.private }}"
 
 - name: Configure SSH public key - {{ key.name }}
   template:
-    src: id_rsa.pub.j2
+    src: id.pub.j2
     dest: "{{ ansible_env.HOME }}/.ssh/{{ key.name }}.pub"
     mode: 0644
   vars:
-    ssh_rsa_public_key: "{{ key.public }}"
-    ssh_rsa_public_key_comment: "{{ key.comment | default('') }}"
+    ssh_public_key: "{{ key.public }}"
