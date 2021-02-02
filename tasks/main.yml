@@ -11,3 +11,4 @@
   loop_control:
     loop_var: key
   with_items: "{{ ssh_keys }}"
+  no_log: true
